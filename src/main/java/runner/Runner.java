@@ -10,25 +10,45 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Runner {
-    PassengerPlane plane1 = new PassengerPlane.PassengerPlaneBuilder(800).
-            setMaxFlightDistance(600).setMaxSpeed(5000).setModel("model1").setMaxLoadCapacity(600).build();
+
+    private static PassengerPlane passengerPlaneBoeing_737 = new PassengerPlane.PassengerPlaneBuilder(850).
+            setMaxFlightDistance(630).setMaxSpeed(5500).setModel("Boeing-737").setMaxLoadCapacity(700).build();
+
+    private static PassengerPlane passengerPlaneBoeing_737_800 = new PassengerPlane.PassengerPlaneBuilder(900).
+            setMaxFlightDistance(400).setMaxSpeed(5900).setModel("Boeing-737-800").setMaxLoadCapacity(550).build();
+
+    private static PassengerPlane passengerPlaneBoeing_747 = new PassengerPlane.PassengerPlaneBuilder(830).
+            setMaxFlightDistance(430).setMaxSpeed(6100).setModel("Boeing-747").setMaxLoadCapacity(540).build();
+
+    private static PassengerPlane passengerPlaneAirbus_A330 = new PassengerPlane.PassengerPlaneBuilder(820).
+            setMaxFlightDistance(510).setMaxSpeed(5200).setModel("Airbus A330").setMaxLoadCapacity(700).build();
+
+    private static MilitaryPlane militaryPlaneB_1B_Lancer = new MilitaryPlane.MilitaryPlaneBuilder(MilitaryType.BOMBER).
+            setMaxFlightDistance(1050).setMaxSpeed(21000).setModel("B-1B Lance").setMaxLoadCapacity(80000).build();
+
+    private static MilitaryPlane militaryPlane1B_2_Spirit = new MilitaryPlane.MilitaryPlaneBuilder(MilitaryType.BOMBER).
+            setMaxFlightDistance(1030).setMaxSpeed(22000).setModel("B-2 Spirit").setMaxLoadCapacity(70000).build();
+
+    private static MilitaryPlane militaryPlaneB_52_Stratofortress = new MilitaryPlane.MilitaryPlaneBuilder(MilitaryType.BOMBER).
+            setMaxFlightDistance(1000).setMaxSpeed(20000).setModel("B-52 Stratofortress").setMaxLoadCapacity(8000).build();
+
+    private static MilitaryPlane militaryPlaneF_15 = new MilitaryPlane.MilitaryPlaneBuilder(MilitaryType.FIGHTER).
+            setMaxFlightDistance(1500).setMaxSpeed(12000).setModel("F-15").setMaxLoadCapacity(10000).build();
+
+    private static MilitaryPlane militaryPlane130_HerculesV = new MilitaryPlane.MilitaryPlaneBuilder(MilitaryType.TRANSPORT).
+            setMaxFlightDistance(650).setMaxSpeed(5000).setModel("C-130 Hercules").setMaxLoadCapacity(11000).build();
 
 
     static List<Plane> planes = Arrays.asList(
-            new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
-            new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
-            new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
-            new PassengerPlane("Airbus A320", 930, 11800, 65500, 188),
-            new PassengerPlane("Airbus A330", 990, 14800, 80500, 222),
-            new PassengerPlane("Embraer 190", 870, 8100, 30800, 64),
-            new PassengerPlane("Sukhoi Superjet 100", 870, 11500, 50500, 140),
-            new PassengerPlane("Bombardier CS300", 920, 11000, 60700, 196),
-            new MilitaryPlane("B-1B Lancer", 1050, 21000, 80000, MilitaryType.BOMBER),
-            new MilitaryPlane("B-2 Spirit", 1030, 22000, 70000, MilitaryType.BOMBER),
-            new MilitaryPlane("B-52 Stratofortress", 1000, 20000, 80000, MilitaryType.BOMBER),
-            new MilitaryPlane("F-15", 1500, 12000, 10000, MilitaryType.FIGHTER),
-            new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.FIGHTER),
-            new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
+            passengerPlaneBoeing_737,
+            passengerPlaneBoeing_737_800,
+            passengerPlaneBoeing_747,
+            passengerPlaneAirbus_A330,
+            militaryPlane1B_2_Spirit,
+            militaryPlane130_HerculesV,
+            militaryPlaneB_1B_Lancer,
+            militaryPlaneB_52_Stratofortress,
+            militaryPlaneF_15
     );
 
     public static void main(String[] args) {

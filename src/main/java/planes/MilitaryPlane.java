@@ -8,9 +8,45 @@ public class MilitaryPlane extends Plane {
 
     private MilitaryType militaryType;
 
-    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType militaryType) {
-        super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-        this.militaryType = militaryType;
+    private MilitaryPlane(MilitaryPlaneBuilder builder) {
+        super(builder.model, builder.maxSpeed, builder.maxFlightDistance, builder.maxLoadCapacity);
+        this.militaryType = builder.militaryType;
+    }
+
+    public static class MilitaryPlaneBuilder {
+        private MilitaryType militaryType;
+        private String model;
+        private int maxSpeed;
+        private int maxFlightDistance;
+        private int maxLoadCapacity;
+
+        public MilitaryPlaneBuilder(MilitaryType militaryType){
+            this.militaryType = militaryType;
+        }
+
+        public MilitaryPlaneBuilder setModel(String model){
+            this.model = model;
+            return this;
+        }
+
+        public MilitaryPlaneBuilder setMaxSpeed(int maxSpeed){
+            this.maxSpeed = maxSpeed;
+            return this;
+        }
+
+        public MilitaryPlaneBuilder setMaxFlightDistance(int maxFlightDistance){
+            this.maxFlightDistance = maxFlightDistance;
+            return this;
+        }
+
+        public MilitaryPlaneBuilder setMaxLoadCapacity(int maxLoadCapacity){
+            this.maxLoadCapacity = maxLoadCapacity;
+            return this;
+        }
+
+        public MilitaryPlane build(){
+            return new MilitaryPlane(this);
+        }
     }
 
     public MilitaryType getMilitaryType() {
